@@ -1,0 +1,54 @@
+
+drop database IF EXISTS vorschulmathe;
+create database vorschulmathe;
+use vorschulmathe;
+
+
+CREATE TABLE user
+(
+    id   int auto_increment PRIMARY KEY,
+    name varchar(255),
+    hintergrund varchar(255),
+    aufgabenId int,
+    rolle varchar(255),
+    belohnungsstand int
+);
+
+
+
+CREATE TABLE sprachdatei
+(
+    id    int  PRIMARY KEY,
+    sprachdatei  varchar(255),
+    beschreibung varchar(255)
+
+);
+
+CREATE TABLE aufgaben
+(
+    id    int  PRIMARY KEY,
+    wert1  int,
+    wert2  int,
+    wert3  int,
+    wert4  int,
+    wert5  int,
+    rechenart int,
+    bild1 varchar(255),
+    bild2 varchar(255),
+    loesung1 int,
+    loesung2 int,
+    SprachdateiId int
+
+);
+
+CREATE TABLE belohnung
+(
+    id    int  PRIMARY KEY,
+    belohnung  varchar(255)
+
+
+);
+
+
+alter table user add foreign key (aufgabenId) references aufgaben(id);
+alter table aufgaben add foreign key (sprachdateiId) references sprachdatei(id);
