@@ -20,20 +20,14 @@ private string $sprachdatei;
         return $this->id;
     }
 
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
+
 
     public function getSprachdatei(): string
     {
         return $this->sprachdatei;
     }
 
-    public function setSprachdatei(string $sprachdatei): void
-    {
-        $this->sprachdatei = $sprachdatei;
-    }
+
 
 
 }
