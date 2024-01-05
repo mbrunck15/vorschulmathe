@@ -45,5 +45,34 @@ class Aufgaben
         $this->sprachdateiId = $sprachdateiId;
     }
 
+    public function getAllAsObjects()
+    {
+        $pdo = Dbconn::getConn();
+        try {
+            $stmt = $pdo->prepare("SELECT * FROM aufgaben");
+            $stmt->execute();
+            $aufgaben = $stmt->fetchAll(PDO::FETCH_CLASS, 'Aufgaben');
+            return $aufgaben;
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            throw new  Exception('Fehler!');
+        }
 
-}
+    }
+        public function getObjectById(int $id): Aufgaben
+    {
+        $pdo = Dbconn::getConn();
+        try {
+            $stmt = $pdo->prepare("SELECT * FROM aufgaben WHERE id=:id");
+            $stmt->bindParam('id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+            $m = $stmt->fetchObject('Aufgaben');
+            return $m;
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            throw new  Exception('Fehler!');
+        }
+    }
+
+
+    }
