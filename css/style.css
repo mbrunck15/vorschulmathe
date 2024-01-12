@@ -1,11 +1,13 @@
 
-body{background-color: lightpink}
+body{background-color:pink}
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: darkblue;
+    border-radius: 25px;
+    box-shadow: 4px 4px lightpink;
 }
 h1 {  text-align: center;
 
@@ -30,9 +32,81 @@ li a {
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
+    background-color: red;
 }
 
 .active {
-    background-color: darkblue;
+    background-color: green;
+}
+#top{
+    margin: auto;
+    background-color: antiquewhite;
+    width: 60%;
+
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 4px 4px lightpink;
+
+
+}
+.haupt {
+    display: flex;
+     margin: 2px;
+    width: 100%;
+
+}
+
+#level{
+    width: 20%;
+    background-color: antiquewhite;
+    height:480px;
+    margin: 6px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 4px 4px lightpink;
+    position: relative;
+}
+#rechnen{
+    background-color: antiquewhite;
+    width: 60%;
+    height: 480px;
+    margin: 6px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 4px 4px lightpink;
+}
+#belohnung{
+    width: 20%;
+    height: 480px;
+    background-color: antiquewhite;
+    margin: 6px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 4px 4px lightpink;
+
+}
+#foot {
+    width: 100%;
+    height: 60px;
+    background-color: antiquewhite;
+    margin: 6px;
+    border-radius: 25px;
+    box-shadow: 4px 4px lightpink;
+
+}
+#button1 {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 10px;
+
+
+
 }
