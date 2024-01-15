@@ -1,11 +1,12 @@
 
-body{background-color:pink}
+body{background-color: #ffc1d5
+}
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: darkblue;
+    background-color: #b24c6d;
     border-radius: 25px;
     box-shadow: 4px 4px lightpink;
 }
@@ -32,11 +33,11 @@ li a {
 }
 
 li a:hover:not(.active) {
-    background-color: red;
+    background-color: rgba(161, 30, 30, 0.77);
 }
 
 .active {
-    background-color: green;
+    background-color: #76b27c;
 }
 #top{
     margin: auto;
@@ -53,6 +54,7 @@ li a:hover:not(.active) {
     display: flex;
      margin: 2px;
     width: 100%;
+
 
 }
 
@@ -95,7 +97,7 @@ li a:hover:not(.active) {
 
 }
 #button1 {
-    background-color: #04AA6D; /* Green */
+    background-color: #76b27c; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -106,7 +108,50 @@ li a:hover:not(.active) {
     border-radius: 25px;
     position: absolute;
     bottom: 10px;
+}
+#s{
 
+    position: relative;
+    justify-content: center;
+    margin-top:50px;
 
+}
+#schlange {
+    display: flex;
+    justify-content: center;
 
+}
+.schlangezahl{
+    border: black;
+    border-style: solid;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    margin: 8px;
+}
+.top2px{
+    margin-top: -2px;
+}
+.bottem2px{
+    margin-top:+20px;
+}
+
+#z{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:80px;
+}
+.auswahl {
+    display: flex;
+    justify-content: center;
+    margin-top: 240px;
+}
+.auswahlzahl{
+    border: black;
+    border-style: solid;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    margin: 1px;
 }

@@ -19,6 +19,9 @@ include 'nav.php';
     </div>
     <div id="rechnen">
         rechnen
+        <?php
+        include 'zahlenschlange.php';
+        ?>
     </div>
     <div id="level">
         level
