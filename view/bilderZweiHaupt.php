@@ -21,7 +21,7 @@ include 'nav.php';
 
         <?php
         include 'arbeitsanweisung.php';
-        include 'bilder.php';
+        include 'bilderplus.php';
         ?>
     </div>
     <div id="level">
@@ -35,3 +35,4 @@ include 'nav.php';
 
 </body>
 </html>
+

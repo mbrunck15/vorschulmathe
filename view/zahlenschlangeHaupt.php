@@ -21,7 +21,7 @@ include 'nav.php';
 
         <?php
         include 'arbeitsanweisung.php';
-        include 'bilder.php';
+        include 'zahlenschlange.php';
         ?>
     </div>
     <div id="level">

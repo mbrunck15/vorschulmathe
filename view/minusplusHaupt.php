@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,12 +17,16 @@ include 'nav.php';
 <div class='haupt' >
     <div id="belohnung" >
         belohnung
+        <?php
+        include 'belohnung.php';
+
+        ?>
     </div>
     <div id="rechnen">
 
         <?php
         include 'arbeitsanweisung.php';
-        include 'bilder.php';
+        include 'plusminus.php';
         ?>
     </div>
     <div id="level">
