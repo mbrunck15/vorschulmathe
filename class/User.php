@@ -103,6 +103,7 @@ class User
             $stmt->bindParam('id', $id, PDO::PARAM_INT);
             $stmt->execute();
             $user = $stmt->fetchObject('User');
+
             return $user;
         } catch (Exception $e) {
             echo $e->getMessage();

@@ -15,16 +15,12 @@ include 'nav.php';
 ?>
 <div class='haupt' >
     <div id="belohnung" >
-        <?php
-        include 'level.php';
-        ?>
+        belohnung
     </div>
     <div id="rechnen">
 
-        <?php
-        include 'arbeitsanweisung.php';
-        include 'bilder.php';
-        ?>
+       <h1>Hallo Liebe Lea </h1>
+        <h2>Damit du einen guten start in deine Schulzeit hast</h2>
     </div>
     <div id="level">
         level
@@ -37,3 +33,5 @@ include 'nav.php';
 
 </body>
 </html>
+
+

@@ -15,6 +15,16 @@ private string $belohnung;
         $this->belohnung = $belohnung;
     }
 
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getBelohnung(): string
+    {
+        return $this->belohnung;
+    }
+
     public function getAllAsObjects()
     {
         $pdo = Dbconn::getConn();
