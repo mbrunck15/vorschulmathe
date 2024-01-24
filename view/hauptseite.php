@@ -24,7 +24,7 @@ include 'nav.php';
     </div>
     <div id="level">
         level
-        <button id="button1">weiter</button>
+        <a href="index.php?action=showaufgabeBild"><button id="button1" >weiter</button></a>
     </div>
 </div>
 <div id="foot">

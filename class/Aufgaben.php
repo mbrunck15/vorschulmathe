@@ -37,25 +37,58 @@ class Aufgaben
      * @param string $loesungsbild3
      * @param string $loesungsbild4
      */
-    public function __construct(float $id, int $wert1, int $wert2, int $wert3, int $wert4, int $wert5, string $rechenart, string $bild1, string $bild2, int $loesung1, int $loesung2, float $sprachdateiId, string $loesungsbild1, string $loesungsbild2, string $loesungsbild3, string $loesungsbild4)
+    public function __construct(float $id = null, int  $wert1 = null, int $wert2 = null, int $wert3 = null, int $wert4 = null, int $wert5 = null, string $rechenart = null, string $bild1 = null, string $bild2 = null, int $loesung1 = null, int $loesung2 = null, float $sprachdateiId = null, string $loesungsbild1 = null, string $loesungsbild2 = null, string $loesungsbild3 = null, string $loesungsbild4 = null)
     {
-        $this->id = $id;
-        $this->wert1 = $wert1;
-        $this->wert2 = $wert2;
-        $this->wert3 = $wert3;
-        $this->wert4 = $wert4;
-        $this->wert5 = $wert5;
-        $this->rechenart = $rechenart;
-        $this->bild1 = $bild1;
-        $this->bild2 = $bild2;
-        $this->loesung1 = $loesung1;
-        $this->loesung2 = $loesung2;
-        $this->sprachdateiId = $sprachdateiId;
-        $this->loesungsbild1 = $loesungsbild1;
-        $this->loesungsbild2 = $loesungsbild2;
-        $this->loesungsbild3 = $loesungsbild3;
-        $this->loesungsbild4 = $loesungsbild4;
+        if (isset($id)) {
+            $this->id = $id;
+        }//echo $wert1;
+        if (isset($wert1)) {
+            $this->wert1 = $wert1;
+        }
+        if (isset($wert2)) {
+            $this->wert2 = $wert2;
+        }
+        if (isset($wert3)) {
+            $this->wert3 = $wert3;
+        }
+        if (isset($wert4)) {
+            $this->wert4 = $wert4;
+        }
+        if (isset($wert5)) {
+            $this->wert5 = $wert5;
+        }
+        if (isset($rechensart)) {
+            $this->rechenart = $rechenart;
+        }
+        if (isset($bild1)) {
+            $this->bild1 = $bild1;
+        }
+        if (isset($bild2)) {
+            $this->bild2 = $bild2;
+        }
+        if (isset($loesung1)) {
+            $this->loesung1 = $loesung1;
+        }
+        if (isset($loesung2)) {
+            $this->loesung2 = $loesung2;
+        }
+        if (isset($sprachdateiId)) {
+            $this->sprachdateiId = $sprachdateiId;
+        }
+        if (isset($loesungsbild1)) {
+            $this->loesungsbild1 = $loesungsbild1;
+        }
+        if (isset($loesungsbild2)) {
+            $this->loesungsbild2 = $loesungsbild2;
+        }
+        if (isset($loesungsbild3)) {
+            $this->loesungsbild3 = $loesungsbild3;
+        }
+        if (isset($loesungsbild4)) {
+            $this->loesungsbild4 = $loesungsbild4;
+        }
     }
+
 
     public function getId(): float
     {
@@ -144,7 +177,7 @@ class Aufgaben
         try {
             $stmt = $pdo->prepare("SELECT * FROM aufgaben");
             $stmt->execute();
-            $aufgaben = $stmt->fetchAll(PDO::FETCH_CLASS, 'Aufgaben');
+            $aufgaben = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $aufgaben;
         } catch (Exception $e) {
             echo $e->getMessage();
@@ -152,7 +185,8 @@ class Aufgaben
         }
 
     }
-        public function getObjectById(int $id): Aufgaben
+
+    public function getObjectById(int $id): Aufgaben
     {
         $pdo = Dbconn::getConn();
         try {
@@ -168,4 +202,4 @@ class Aufgaben
     }
 
 
-    }
+}
