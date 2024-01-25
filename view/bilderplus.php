@@ -21,9 +21,9 @@
     <div class="ziel botton" style="margin-left: 120px" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 </div>
 <div id="senk">
-<div class="auswahlzahl" ><img id="drag1" src="../pic/zahl0.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
-<div class="auswahlzahl"><img id="drag2" src="../pic/zahl1.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px" data></div>
-<div class="auswahlzahl"><img id="drag3" src="../pic/zahl5.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
-<div class="auswahlzahl"><img id="drag4" src="../pic/zahl9.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
+<div class="auswahlzahl" ><img id="drag1" src="../pic/zahl00.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
+<div class="auswahlzahl"><img id="drag2" src="../pic/zahl01.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px" data></div>
+<div class="auswahlzahl"><img id="drag3" src="../pic/zahl05.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
+<div class="auswahlzahl"><img id="drag4" src="../pic/zahl09.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
 </div>
 </div>

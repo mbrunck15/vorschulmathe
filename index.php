@@ -37,7 +37,14 @@ Session_start();
 if ($action == 'showaufgabeBild') {
     $a = new Aufgaben();
     $aArr = $a->getAllAsObjects()[0];
+    print_r($aArr);
+    $v = new Sprache();
+    $id=$aArr['sprachdateiId'];
+    echo $id;
+    $vArr = $v->getObjectById($id);
+
 }
+
 if ($action == 'showaufgabeBild') {
     include 'view/aufgabeBild.php';
 

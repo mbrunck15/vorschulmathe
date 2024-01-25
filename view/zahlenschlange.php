@@ -24,9 +24,9 @@
 </div>
 <div id="z">
 <div class="auswahl">
-    <div class="auswahlzahl"><img id="drag1" src="../pic/zahl7.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
-    <div class="auswahlzahl"><img id="drag2" src="../pic/zahl5.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
-    <div class="auswahlzahl"><img id="drag3" src="../pic/zahl6.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
-    <div class="auswahlzahl"><img id="drag4" src="../pic/zahl9.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
+    <div class="auswahlzahl"><img id="drag1" src="../pic/zahl07.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
+    <div class="auswahlzahl"><img id="drag2" src="../pic/zahl05.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
+    <div class="auswahlzahl"><img id="drag3" src="../pic/zahl06.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
+    <div class="auswahlzahl"><img id="drag4" src="../pic/zahl09.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
 </div>
 </div>

@@ -24,10 +24,10 @@
 </div>
 <div id="z">
     <div class="auswahl">
-        <div class="auswahlzahl"><img id="drag1" src="../pic/zahl1.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
-        <div class="auswahlzahl"><img id="drag2" src="../pic/zahl3.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
-        <div class="auswahlzahl"><img id="drag3" src="../pic/zahl0.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
-        <div class="auswahlzahl"><img id="drag4" src="../pic/zahl2.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
+        <div class="auswahlzahl"><img id="drag1" src="../pic/zahl01.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
+        <div class="auswahlzahl"><img id="drag2" src="../pic/zahl03.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
+        <div class="auswahlzahl"><img id="drag3" src="../pic/zahl00.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
+        <div class="auswahlzahl"><img id="drag4" src="../pic/zahl02.png" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
     </div>
 </div>
 

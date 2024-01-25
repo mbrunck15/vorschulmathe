@@ -39,6 +39,7 @@ li a:hover:not(.active) {
 .active {
     background-color: #76b27c;
 }
+.active:hover{ background-color: #39af45}
 #top{
     margin: auto;
     background-color: antiquewhite;
@@ -109,6 +110,7 @@ li a:hover:not(.active) {
     position: absolute;
     bottom: 10px;
 }
+#button1:hover{ background-color: #39af45}
 #s{
 
     position: relative;
@@ -171,6 +173,7 @@ li a:hover:not(.active) {
     border-radius: 25px;
 
 }
+#buttonton:hover{ background-color: #39af45}
 #bild{
     height: 300px;
     width: 300px;

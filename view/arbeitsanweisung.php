@@ -1,1 +1,2 @@
-<h1 id="text">Hier entsteht der Arbeitstext</h1><button id="buttonton">Ton</button>
+<h1 id="text"><?php echo $vArr->getBeschreibung();?></h1>
+<button id="buttonton">Ton</button>

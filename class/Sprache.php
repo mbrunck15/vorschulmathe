@@ -12,13 +12,14 @@ private string$beschreibung;
      * @param string $sprachdatei
      * @param string $beschreibung
      */
-    public function __construct(int $id, string $sprachdatei, string $beschreibung)
+    public function __construct(int $id = null, string $sprachdatei = null, string $beschreibung = null)
     {
-        $this->id = $id;
-        $this->sprachdatei = $sprachdatei;
-        $this->beschreibung = $beschreibung;
+        if (isset($id)) {
+            $this->id = $id;
+            $this->sprachdatei = $sprachdatei;
+            $this->beschreibung = $beschreibung;
+        }
     }
-
 
 
     public function getId(): int
@@ -54,16 +55,19 @@ private string$beschreibung;
 
     /**
      * @param int $id
-     * @return Mitarbeiter|false
+     * @return Sprache|false
      */
     public function getObjectById(int $id): Sprache
     {
         $pdo = Dbconn::getConn();
         try {
-            $stmt = $pdo->prepare("SELECT * FROM mitarbeiter WHERE id=:id");
+            $stmt = $pdo->prepare("SELECT * FROM sprachdatei WHERE id=:id");
             $stmt->bindParam('id', $id, PDO::PARAM_INT);
             $stmt->execute();
-            $m = $stmt->fetchObject('Mitarbeiter');
+            $m = $stmt->fetchObject('Sprache');
+            echo'<pre>';
+            print_r($m->getBeschreibung());
+            echo'</pre>';
             return $m;
         } catch (Exception $e) {
             echo $e->getMessage();
