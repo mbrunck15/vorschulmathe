@@ -22,9 +22,17 @@ include 'nav.php';
        <h1>Hallo Liebe Lea </h1>
         <h2>Damit du einen guten start in deine Schulzeit hast</h2>
     </div>
-    <div id="level">
+    <div id="level10">
         level
-        <a href="index.php?action=showaufgabeBild"><button id="button1" >weiter</button></a>
+<!--        <a href="index.php?action=showaufgabeBild">-->
+<!--            <button id="button1">weiter</button>-->
+<!--        </a>-->
+        <form>
+            <button id="button1">weiter</button>
+            <input id="level" type="hidden"  name="neueslevel" >
+            <input type="hidden" name="action" value="showaufgabeBild">
+        </form>
+
     </div>
 </div>
 <div id="foot">

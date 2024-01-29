@@ -21,7 +21,7 @@ class Aufgaben
 
     /**
      * @param float $id
-     * @param int $wert1
+     * @param ?int $wert1
      * @param int $wert2
      * @param int $wert3
      * @param int $wert4
@@ -201,60 +201,68 @@ class Aufgaben
         }
     }
 
-    public function getLoesung01(): string
+    public function getLoesung01($id): string
     {
         $pdo = Dbconn::getConn();
         try {
-            $stmt = $pdo->prepare("SELECT loesungsbild1 FROM Aufgaben WHERE id=:id");
+            $stmt = $pdo->prepare("SELECT * FROM Aufgaben WHERE id=:id");
             $stmt->bindParam('id', $id, PDO::PARAM_STR);
             $stmt->execute();
-            $l = $stmt->fetchObject('Aufgaben');
-            $n = substr($l, 11, -4);
+            $l = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            echo '<pre>';
+            print_r($l[0]);
+            echo '</pre>';
+            $l1 = $l[0]['loesungsbild1'];
+            //$l1 = $l['id'];
+            $n = substr($l1, 11, -4);
             return $n;
         }catch (Exception $e){
             echo $e->getMessage();
             throw new  Exception('Fehler!');
         }
     }
-    public function getLoesung02(): string
+    public function getLoesung02($id): string
     {
         $pdo = Dbconn::getConn();
         try {
-            $stmt = $pdo->prepare("SELECT loesungsbild2 FROM Aufgaben WHERE id=:id");
+            $stmt = $pdo->prepare("SELECT * FROM Aufgaben WHERE id=:id");
             $stmt->bindParam('id', $id, PDO::PARAM_STR);
             $stmt->execute();
-            $l = $stmt->fetchObject('Aufgaben');
-            $n = substr($l, 11, -4);
+            $l = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $l2 = $l[0]['loesungsbild2'];
+            $n = substr($l2, 11, -4);
             return $n;
         }catch (Exception $e){
             echo $e->getMessage();
             throw new  Exception('Fehler!');
         }
     }
-    public function getLoesung03(): string
+    public function getLoesung03($id): string
     {
         $pdo = Dbconn::getConn();
         try {
-            $stmt = $pdo->prepare("SELECT loesungsbild3 FROM Aufgaben WHERE id=:id");
+            $stmt = $pdo->prepare("SELECT * FROM Aufgaben WHERE id=:id");
             $stmt->bindParam('id', $id, PDO::PARAM_STR);
             $stmt->execute();
-            $l = $stmt->fetchObject('Aufgaben');
-            $n = substr($l, 11, -4);
+            $l = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $l3 = $l[0]['loesungsbild3'];
+            $n = substr($l3, 11, -4);
             return $n;
         }catch (Exception $e){
             echo $e->getMessage();
             throw new  Exception('Fehler!');
         }
     }
-    public function getLoesung04(): string
+    public function getLoesung04($id): string
     {
         $pdo = Dbconn::getConn();
         try {
             $stmt = $pdo->prepare("SELECT loesungsbild4 FROM Aufgaben WHERE id=:id");
             $stmt->bindParam('id', $id, PDO::PARAM_STR);
             $stmt->execute();
-            $l = $stmt->fetchObject('Aufgaben');
-            $n = substr($l, 11, -4);
+            $l = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $l4 = $l[0]['loesungsbild4'];
+            $n = substr($l4, 11, -4);
             return $n;
         }catch (Exception $e){
             echo $e->getMessage();

@@ -8,8 +8,8 @@ CREATE TABLE user
 (
     id   int auto_increment PRIMARY KEY,
     name varchar(255),
-    hintergrund varchar(255),
-    aufgabenId int,
+    passwort varchar(255),
+    aufgabenId float,
     rolle varchar(255),
     belohnungsstand int
 );
@@ -18,7 +18,7 @@ CREATE TABLE user
 
 CREATE TABLE sprachdatei
 (
-    id    int  PRIMARY KEY,
+    id  float PRIMARY KEY,
     sprachdatei  varchar(255),
     beschreibung varchar(255)
 
@@ -26,24 +26,29 @@ CREATE TABLE sprachdatei
 
 CREATE TABLE aufgaben
 (
-    id    int  PRIMARY KEY,
+    id    float PRIMARY KEY,
     wert1  int,
     wert2  int,
     wert3  int,
     wert4  int,
     wert5  int,
-    rechenart int,
+    rechenart varchar(255),
     bild1 varchar(255),
     bild2 varchar(255),
     loesung1 int,
     loesung2 int,
-    SprachdateiId int
+    sprachdateiId float,
+    loesungsbild1 varchar(255),
+    loesungsbild2 varchar(255),
+    loesungsbild3 varchar(255),
+    loesungsbild4 varchar(255)
+
 
 );
 
 CREATE TABLE belohnung
 (
-    id    int  PRIMARY KEY,
+    id    int auto_increment PRIMARY KEY,
     belohnung  varchar(255)
 
 
@@ -52,3 +57,174 @@ CREATE TABLE belohnung
 
 alter table user add foreign key (aufgabenId) references aufgaben(id);
 alter table aufgaben add foreign key (sprachdateiId) references sprachdatei(id);
+
+insert into sprachdatei(id,SPRACHDATEI, BESCHREIBUNG) VALUES
+                                (1,'../wav/ton1','Zähle wie viele Bälle auf dem Bild zu sehen sind und tippe auf die richtige Zahl'),
+                                (2,'../wav/ton2','Das ist nicht richtig schau nochmal ganz genau hin'),
+                                (3,'../wav/ton3','Super das hast du gut gemacht mit dem Pfeil nach rechts kommst du weiter zur nächsten Aufgabe'),
+                                (4,'../wav/ton4','Du hast hier 2 Bilder mit Bällen.Wie viele sind es insgesamt '),
+                                (5,'../wav/ton5','setzte bei der Schlange die fehlenden Zahlen ein damit sie dich nicht beißt.'),
+                                (6,'../wav/ton6','Man sie wollte dich beissen, ich konnte sie gerade so noch halten gib dir mehr Mühe'),
+                                (7,'../wav/ton7','Addiere beide Zahlen indem Du sie plus zusammenrechnest und verrate mir die Lösung'),
+                                (8,'../wav/ton8','Subtrahiere beide Zahlen indem Du sie minus rechnest und verrate mir die Lösung'),
+                                (9,'../wav/ton9','Addiere oder Subtrahiere beide Zahlen indem Du sie plus oder minus rechnist und pass genau auf welches zeichen angegeben sind.');
+
+
+
+
+insert into aufgaben(id, wert1, wert2, wert3, wert4, wert5, rechenart, bild1, bild2, loesung1, loesung2, sprachdateiId,loesungsbild1,loesungsbild2,loesungsbild3,loesungsbild4) VALUES
+                                (1,null,null,null,null,null,null,'../pic/bild3.png',null,03,null,1,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (2,null,null,null,null,null,null,'../pic/bild1.png',null,01,null,1,'../pic/zahl05.png','../pic/zahl01.png','../pic/zahl00.png','../pic/zahl04.png'),
+                                (3,null,null,null,null,null,null,'../pic/bild5.png',null,05,null,1,'../pic/zahl05.png','../pic/zahl06.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (4,null,null,null,null,null,null,'../pic/bild2.png',null,02,null,1,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (5,null,null,null,null,null,null,'../pic/bild4.png',null,04,null,1,'../pic/zahl06.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl04.png'),
+                                (6,null,null,null,null,null,null,'../pic/bild8.png',null,08,null,1,'../pic/zahl07.png','../pic/zahl05.png','../pic/zahl08.png','../pic/zahl09.png'),
+                                (7,null,null,null,null,null,null,'../pic/bild6.png',null,06,null,1,'../pic/zahl06.png','../pic/zahl05.png','../pic/zahl04.png','../pic/zahl07.png'),
+                                (8,null,null,null,null,null,null,'../pic/bild9.png',null,09,null,1,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (9,null,null,null,null,null,null,'../pic/bild7.png',null,07,null,1,'../pic/zahl06.png','../pic/zahl08.png','../pic/zahl05.png','../pic/zahl07.png'),
+                                (10,null,null,null,null,null,null,'../pic/bild2.png','../pic/bild1.png',03,null,4,'../pic/zahl02.png','../pic/zahl00.png','../pic/zahl03.png','../pic/zahl04.png'),
+                                (11,null,null,null,null,null,null,'../pic/bild3.png','../pic/bild2.png',05,null,4,'../pic/zahl04.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl06.png'),
+                                (12,null,null,null,null,null,null,'../pic/bild1.png','../pic/bild4.png',05,null,4,'../pic/zahl06.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl04.png'),
+                                (13,null,null,null,null,null,null,'../pic/bild3.png','../pic/bild3.png',06,null,4,'../pic/zahl07.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl06.png'),
+                                (14,null,null,null,null,null,null,'../pic/bild2.png','../pic/bild5.png',06,null,4,'../pic/zahl04.png','../pic/zahl05.png','../pic/zahl06.png','../pic/zahl07.png'),
+                                (15,null,null,null,null,null,null,'../pic/bild4.png','../pic/bild4.png',08,null,4,'../pic/zahl08.png','../pic/zahl07.png','../pic/zahl09.png','../pic/zahl10.png'),
+                                (16,null,null,null,null,null,null,'../pic/bild3.png','../pic/bild4.png',07,null,4,'../pic/zahl09.png','../pic/zahl07.png','../pic/zahl08.png','../pic/zahl06.png'),
+                                (17,null,null,null,null,null,null,'../pic/bild5.png','../pic/bild3.png',08,null,4,'../pic/zahl10.png','../pic/zahl08.png','../pic/zahl09.png','../pic/zahl07.png'),
+                                (18,null,null,null,null,null,null,'../pic/bild4.png','../pic/bild4.png',08,null,4,'../pic/zahl09.png','../pic/zahl07.png','../pic/zahl06.png','../pic/zahl08.png'),
+                                (19,1,2,null,4,null,null,null,null,03,05,5,'../pic/zahl03.png','../pic/zahl05.png','../pic/zahl04.png','../pic/zahl02.png'),
+                                (20,3,null,5,6,null,null,null,null,04,07,5,'../pic/zahl05.png','../pic/zahl04.png','../pic/zahl07.png','../pic/zahl06.png'),
+                                (21,null,2,null,4,5,null,null,null,01,03,5,'../pic/zahl02.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (22,1,2,3,null,null,null,null,null,04,05,5,'../pic/zahl02.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (23,1,null,3,4,null,null,null,null,02,05,5,'../pic/zahl02.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl05.png'),
+                                (24,null,2,3,null,5,null,null,null,01,04,5,'../pic/zahl02.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (25,4,5,null,7,null,null,null,null,03,05,5,'../pic/zahl02.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl05.png'),
+                                (26,6,null,7,8,null,null,null,null,06,09,5,'../pic/zahl07.png','../pic/zahl09.png','../pic/zahl08.png','../pic/zahl06.png'),
+                                (27,null,5,6,null,8,null,null,null,04,07,5,'../pic/zahl07.png','../pic/zahl04.png','../pic/zahl05.png','../pic/zahl06.png'),
+                                (28,8,9,null,11,null,null,null,null,10,12,5,'../pic/zahl12.png','../pic/zahl14.png','../pic/zahl13.png','../pic/zahl10.png'),
+                                (29,6,null,8,9,null,null,null,null,07,10,5,'../pic/zahl08.png','../pic/zahl10.png','../pic/zahl09.png','../pic/zahl07.png'),
+                                (30,null,10,null,12,13,null,null,null,09,11,5,'../pic/zahl02.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (31,10,11,null,13,null,null,null,null,12,14,5,'../pic/zahl12.png','../pic/zahl14.png','../pic/zahl13.png','../pic/zahl10.png'),
+                                (32,8,null,10,11,null,null,null,null,10,12,5,'../pic/zahl12.png','../pic/zahl14.png','../pic/zahl13.png','../pic/zahl10.png'),
+                                (33,null,7,null,10,11,null,null,null,08,09,5,'../pic/zahl09.png','../pic/zahl7.png','../pic/zahl08.png','../pic/zahl06.png'),
+                                (34,11,12,null,14,null,null,null,null,13,15,5,'../pic/zahl12.png','../pic/zahl14.png','../pic/zahl13.png','../pic/zahl15.png'),
+                                (35,9,null,11,12,null,null,null,null,10,13,5,'../pic/zahl12.png','../pic/zahl14.png','../pic/zahl13.png','../pic/zahl10.png'),
+                                (36,null,10,null,12,13,null,null,null,09,11,5,'../pic/zahl09.png','../pic/zah12.png','../pic/zahl03.png','../pic/zahl11.png'),
+                                (37,null,11,null,13,14,null,null,null,10,12,5,'../pic/zahl12.png','../pic/zahl10.png','../pic/zahl13.png','../pic/zahl11.png'),
+                                (38,13,null,15,16,null,null,null,null,14,17,5,'../pic/zahl15.png','../pic/zahl14.png','../pic/zahl13.png','../pic/zahl17.png'),
+                                (39,null,12,null,14,15,null,null,null,11,13,5,'../pic/zahl12.png','../pic/zahl13.png','../pic/zahl11.png','../pic/zahl15.png'),
+                                (40,12,13,null,15,null,null,null,null,14,16,5,'../pic/zahl12.png','../pic/zahl14.png','../pic/zahl16.png','../pic/zahl11.png'),
+                                (41,13,null,15,16,null,null,null,null,14,17,5,'../pic/zahl12.png','../pic/zahl14.png','../pic/zahl06.png','../pic/zahl19.png'),
+                                (42,null,12,null,14,15,null,null,null,11,13,5,'../pic/zahl13.png','../pic/zahl15.png','../pic/zahl13.png','../pic/zahl11.png'),
+                                (43,12,null,14,null,16,null,null,null,13,15,5,'../pic/zahl15.png','../pic/zahl14.png','../pic/zahl13.png','../pic/zahl16.png'),
+                                (44,13,null,15,16,null,null,null,null,14,17,5,'../pic/zahl15.png','../pic/zahl14.png','../pic/zahl16.png','../pic/zahl17.png'),
+                                (45,null,16,null,18,19,null,null,null,15,17,5,'../pic/zahl17.png','../pic/zahl16.png','../pic/zahl15.png','../pic/zahl18.png'),
+                                (46,14,15,null,17,null,null,null,null,16,18,5,'../pic/zahl16.png','../pic/zahl07.png','../pic/zahl18.png','../pic/zahl19.png'),
+                                (47,13,null,15,16,null,null,null,null,14,17,5,'../pic/zahl13.png','../pic/zahl07.png','../pic/zahl04.png','../pic/zahl19.png'),
+                                (48,null,17,null,19,20,null,null,null,16,18,5,'../pic/zahl02.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (49,15,16,null,18,null,null,null,null,17,19,5,'../pic/zahl15.png','../pic/zahl19.png','../pic/zahl17.png','../pic/zahl20.png'),
+                                (50,13,null,15,16,null,null,null,null,14,17,5,'../pic/zahl19.png','../pic/zahl14.png','../pic/zahl16.png','../pic/zahl17.png'),
+                                (51,null,16,null,18,19,null,null,null,15,17,5,'../pic/zahl12.png','../pic/zahl5.png','../pic/zahl09.png','../pic/zahl17.png'),
+                                (52,16,17,null,19,null,null,null,null,18,20,5,'../pic/zahl20.png','../pic/zahl15.png','../pic/zahl03.png','../pic/zahl18.png'),
+                                (53,13,null,15,16,null,null,null,null,14,17,5,'../pic/zahl14.png','../pic/zahl17.png','../pic/zahl13.png','../pic/zahl20.png'),
+                                (54,null,17,null,19,20,null,null,null,16,18,5,'../pic/zahl20.png','../pic/zahl18.png','../pic/zahl06.png','../pic/zahl13.png'),
+                                (55,1,2,null,null,null,'+',null,null,03,null,6,'../pic/zahl05.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (56,1,3,null,null,null,'+',null,null,04,null,6,'../pic/zahl02.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (57,2,1,null,null,null,'+',null,null,03,null,6,'../pic/zahl02.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (58,2,2,null,null,null,'+',null,null,04,null,6,'../pic/zahl02.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (59,2,3,null,null,null,'+',null,null,05,null,6,'../pic/zahl04.png','../pic/zahl08.png','../pic/zahl05.png','../pic/zahl01.png'),
+                                (60,1,4,null,null,null,'+',null,null,05,null,6,'../pic/zahl06.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl05.png'),
+                                (61,3,1,null,null,null,'+',null,null,04,null,6,'../pic/zahl02.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (62,4,1,null,null,null,'+',null,null,05,null,6,'../pic/zahl05.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl06.png'),
+                                (63,1,3,null,null,null,'+',null,null,04,null,6,'../pic/zahl02.png','../pic/zahl04.png','../pic/zahl03.png','../pic/zahl06.png'),
+                                (64,3,3,null,null,null,'+',null,null,06,null,6,'../pic/zahl07.png','../pic/zahl06.png','../pic/zahl05.png','../pic/zahl08.png'),
+                                (65,2,4,null,null,null,'+',null,null,06,null,6,'../pic/zahl06.png','../pic/zahl07.png','../pic/zahl05.png','../pic/zahl04.png'),
+                                (66,5,2,null,null,null,'+',null,null,07,null,6,'../pic/zahl09.png','../pic/zahl07.png','../pic/zahl06.png','../pic/zahl08.png'),
+                                (67,3,3,null,null,null,'+',null,null,06,null,6,'../pic/zahl08.png','../pic/zahl06.png','../pic/zahl04.png','../pic/zahl07.png'),
+                                (68,3,4,null,null,null,'+',null,null,07,null,6,'../pic/zahl08.png','../pic/zahl06.png','../pic/zahl04.png','../pic/zahl07.png'),
+                                (69,6,1,null,null,null,'+',null,null,07,null,6,'../pic/zahl08.png','../pic/zahl06.png','../pic/zahl04.png','../pic/zahl07.png'),
+                                (70,5,3,null,null,null,'+',null,null,08,null,6,'../pic/zahl08.png','../pic/zahl06.png','../pic/zahl04.png','../pic/zahl10.png'),
+                                (71,4,4,null,null,null,'+',null,null,08,null,6,'../pic/zahl08.png','../pic/zahl06.png','../pic/zahl04.png','../pic/zahl07.png'),
+                                (72,3,4,null,null,null,'+',null,null,07,null,6,'../pic/zahl08.png','../pic/zahl06.png','../pic/zahl04.png','../pic/zahl07.png'),
+                                (73,5,5,null,null,null,'+',null,null,10,null,6,'../pic/zahl08.png','../pic/zahl10.png','../pic/zahl9.png','../pic/zahl7.png'),
+                                (74,7,5,null,null,null,'+',null,null,12,null,6,'../pic/zahl14.png','../pic/zahl13.png','../pic/zahl12.png','../pic/zah10.png'),
+                                (75,6,4,null,null,null,'+',null,null,10,null,6,'../pic/zahl14.png','../pic/zahl13.png','../pic/zahl12.png','../pic/zah10.png'),
+                                (76,7,5,null,null,null,'+',null,null,12,null,6,'../pic/zahl14.png','../pic/zahl13.png','../pic/zahl12.png','../pic/zah10.png'),
+                                (77,5,6,null,null,null,'+',null,null,11,null,6,'../pic/zahl14.png','../pic/zahl13.png','../pic/zahl12.png','../pic/zah11.png'),
+                                (78,7,7,null,null,null,'+',null,null,14,null,6,'../pic/zahl14.png','../pic/zahl13.png','../pic/zahl12.png','../pic/zah10.png'),
+                                (79,8,4,null,null,null,'+',null,null,12,null,6,'../pic/zahl14.png','../pic/zahl13.png','../pic/zahl12.png','../pic/zah10.png'),
+                                (80,6,9,null,null,null,'+',null,null,15,null,6,'../pic/zahl14.png','../pic/zahl13.png','../pic/zahl15.png','../pic/zah16.png'),
+                                (81,7,7,null,null,null,'+',null,null,14,null,6,'../pic/zahl14.png','../pic/zahl13.png','../pic/zahl12.png','../pic/zah15.png'),
+                                (82,10,5,null,null,null,'+',null,null,15,null,6,'../pic/zahl14.png','../pic/zahl13.png','../pic/zahl12.png','../pic/zah15.png'),
+                                (83,12,6,null,null,null,'+',null,null,18,null,6,'../pic/zahl17.png','../pic/zahl19.png','../pic/zahl20.png','../pic/zah18.png'),
+                                (84,11,7,null,null,null,'+',null,null,18,null,6,'../pic/zahl17.png','../pic/zahl19.png','../pic/zahl20.png','../pic/zah18.png'),
+                                (85,15,4,null,null,null,'+',null,null,19,null,6,'../pic/zahl17.png','../pic/zahl19.png','../pic/zahl20.png','../pic/zah18.png'),
+                                (86,13,7,null,null,null,'+',null,null,20,null,6,'../pic/zahl17.png','../pic/zahl19.png','../pic/zahl20.png','../pic/zah18.png'),
+                                (87,10,7,null,null,null,'+',null,null,17,null,6,'../pic/zahl17.png','../pic/zahl19.png','../pic/zahl20.png','../pic/zah18.png'),
+                                (88,12,7,null,null,null,'+',null,null,19,null,6,'../pic/zahl17.png','../pic/zahl19.png','../pic/zahl20.png','../pic/zah18.png'),
+                                (89,10,10,null,null,null,'+',null,null,20,null,6,'../pic/zahl17.png','../pic/zahl19.png','../pic/zahl20.png','../pic/zah18.png'),
+                                (90,12,8,null,null,null,'+',null,null,20,null,6,'../pic/zahl17.png','../pic/zahl19.png','../pic/zahl20.png','../pic/zah18.png'),
+                                (91,3,2,null,null,null,'-',null,null,01,null,7,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (92,4,2,null,null,null,'-',null,null,02,null,7,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (93,2,1,null,null,null,'-',null,null,01,null,7,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (94,5,3,null,null,null,'-',null,null,02,null,7,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (95,3,2,null,null,null,'-',null,null,01,null,7,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (96,4,2,null,null,null,'-',null,null,02,null,7,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (97,3,3,null,null,null,'-',null,null,00,null,7,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl00.png','../pic/zahl01.png'),
+                                (98,5,2,null,null,null,'-',null,null,03,null,7,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (99,4,4,null,null,null,'-',null,null,00,null,7,'../pic/zahl00.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (100,8,2,null,null,null,'-',null,null,06,null,7,'../pic/zahl04.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl06.png'),
+                                (101,7,4,null,null,null,'-',null,null,03,null,7,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (102,6,2,null,null,null,'-',null,null,04,null,7,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl04.png','../pic/zahl01.png'),
+                                (103,9,5,null,null,null,'-',null,null,04,null,7,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl04.png','../pic/zahl01.png'),
+                                (104,8,3,null,null,null,'-',null,null,05,null,7,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl03.png','../pic/zahl01.png'),
+                                (105,6,2,null,null,null,'-',null,null,04,null,7,'../pic/zahl02.png','../pic/zahl05.png','../pic/zahl04.png','../pic/zahl01.png'),
+                                (106,10,2,null,null,null,'-',null,null,08,null,7,'../pic/zahl08.png','../pic/zahl04.png','../pic/zahl06.png','../pic/zahl07.png'),
+                                (107,9,3,null,null,null,'-',null,null,06,null,7,'../pic/zahl08.png','../pic/zahl04.png','../pic/zahl06.png','../pic/zahl07.png'),
+                                (108,8,4,null,null,null,'-',null,null,04,null,7,'../pic/zahl08.png','../pic/zahl04.png','../pic/zahl06.png','../pic/zahl07.png'),
+                                (109,13,6,null,null,null,'-',null,null,07,null,7,'../pic/zahl08.png','../pic/zahl04.png','../pic/zahl06.png','../pic/zahl07.png'),
+                                (110,14,4,null,null,null,'-',null,null,10,null,7,'../pic/zahl08.png','../pic/zahl10.png','../pic/zahl12.png','../pic/zahl11.png'),
+                                (111,13,6,null,null,null,'-',null,null,07,null,7,'../pic/zahl08.png','../pic/zahl04.png','../pic/zahl06.png','../pic/zahl07.png'),
+                                (112,15,5,null,null,null,'-',null,null,10,null,7,'../pic/zahl08.png','../pic/zahl10.png','../pic/zahl12.png','../pic/zahl11.png'),
+                                (113,11,2,null,null,null,'-',null,null,09,null,7,'../pic/zahl09.png','../pic/zahl10.png','../pic/zahl12.png','../pic/zahl11.png'),
+                                (114,12,4,null,null,null,'-',null,null,08,null,7,'../pic/zahl08.png','../pic/zahl04.png','../pic/zahl06.png','../pic/zahl07.png'),
+                                (115,15,7,null,null,null,'-',null,null,08,null,7,'../pic/zahl08.png','../pic/zahl04.png','../pic/zahl06.png','../pic/zahl07.png'),
+                                (116,13,2,null,null,null,'-',null,null,11,null,7,'../pic/zahl08.png','../pic/zahl10.png','../pic/zahl12.png','../pic/zahl11.png'),
+                                (117,11,9,null,null,null,'-',null,null,02,null,7,'../pic/zahl01.png','../pic/zahl0.png','../pic/zahl02.png','../pic/zahl03.png'),
+                                (118,17,7,null,null,null,'-',null,null,10,null,7,'../pic/zahl08.png','../pic/zahl10.png','../pic/zahl12.png','../pic/zahl11.png'),
+                                (119,19,5,null,null,null,'-',null,null,14,null,7,'../pic/zahl07.png','../pic/zahl14.png','../pic/zahl12.png','../pic/zahl11.png'),
+                                (120,18,2,null,null,null,'-',null,null,16,null,7,'../pic/zahl08.png','../pic/zahl16.png','../pic/zahl12.png','../pic/zahl17.png'),
+                                (121,16,8,null,null,null,'-',null,null,08,null,7,'../pic/zahl08.png','../pic/zahl04.png','../pic/zahl06.png','../pic/zahl07.png'),
+                                (122,20,2,null,null,null,'-',null,null,18,null,7,'../pic/zahl08.png','../pic/zahl04.png','../pic/zahl06.png','../pic/zahl07.png'),
+                                (123,19,9,null,null,null,'-',null,null,10,null,7,'../pic/zahl08.png','../pic/zahl10.png','../pic/zahl12.png','../pic/zahl11.png'),
+                                (124,18,6,null,null,null,'-',null,null,12,null,7,'../pic/zahl08.png','../pic/zahl10.png','../pic/zahl12.png','../pic/zahl11.png'),
+                                (125,16,6,null,null,null,'-',null,null,10,null,7,'../pic/zahl08.png','../pic/zahl10.png','../pic/zahl12.png','../pic/zahl11.png'),
+                                (126,18,12,null,null,null,'-',null,null,06,null,7,'../pic/zahl08.png','../pic/zahl04.png','../pic/zahl06.png','../pic/zahl07.png'),
+                                (127,9,6,null,null,null,'-',null,null,03,null,8,'../pic/zahl03.png','../pic/zahl04.png','../pic/zahl06.png','../pic/zahl02.png'),
+                                (128,2,7,null,null,null,'+',null,null,09,null,8,'../pic/zahl08.png','../pic/zahl09.png','../pic/zahl06.png','../pic/zahl07.png'),
+                                (129,5,2,null,null,null,'-',null,null,03,null,8,'../pic/zahl03.png','../pic/zahl04.png','../pic/zahl06.png','../pic/zahl02.png'),
+                                (130,4,4,null,null,null,'+',null,null,08,null,8,'../pic/zahl08.png','../pic/zahl10.png','../pic/zahl12.png','../pic/zahl11.png'),
+                                (131,4,4,null,null,null,'-',null,null,00,null,8,'../pic/zahl03.png','../pic/zahl04.png','../pic/zahl00.png','../pic/zahl2.png'),
+                                (132,7,3,null,null,null,'+',null,null,10,null,8,'../pic/zahl08.png','../pic/zahl10.png','../pic/zahl12.png','../pic/zahl11.png'),
+                                (133,10,5,null,null,null,'-',null,null,05,null,8,'../pic/zahl05.png','../pic/zahl04.png','../pic/zahl06.png','../pic/zahl2.png'),
+                                (134,5,4,null,null,null,'+',null,null,09,null,8,'../pic/zahl09.png','../pic/zahl07.png','../pic/zahl08.png','../pic/zahl10.png'),
+                                (135,7,2,null,null,null,'-',null,null,05,null,8,'../pic/zahl03.png','../pic/zahl04.png','../pic/zahl06.png','../pic/zahl05.png'),
+                                (136,10,7,null,null,null,'+',null,null,17,null,8,'../pic/zahl16.png','../pic/zahl4.png','../pic/zahl17.png','../pic/zahl19.png'),
+                                (137,20,20,null,null,null,'-',null,null,00,null,8,'../pic/zahl01.png','../pic/zahl0.png','../pic/zahl02.png','../pic/zahl03.png'),
+                                (138,14,3,null,null,null,'+',null,null,17,null,8,'../pic/zahl16.png','../pic/zahl4.png','../pic/zahl17.png','../pic/zahl19.png'),
+                                (139,20,8,null,null,null,'-',null,null,12,null,8,'../pic/zahl08.png','../pic/zahl10.png','../pic/zahl12.png','../pic/zahl11.png'),
+                                (140,10,5,null,null,null,'+',null,null,15,null,8,'../pic/zahl16.png','../pic/zahl4.png','../pic/zahl15.png','../pic/zahl19.png'),
+                                (141,17,4,null,null,null,'-',null,null,13,null,8,'../pic/zahl16.png','../pic/zahl4.png','../pic/zahl17.png','../pic/zahl13.png'),
+                                (142,10,7,null,null,null,'+',null,null,17,null,8,'../pic/zahl08.png','../pic/zahl4.png','../pic/zahl06.png','../pic/zahl07.png'),
+                                (143,14,3,null,null,null,'-',null,null,11,null,8,'../pic/zahl08.png','../pic/zahl10.png','../pic/zahl12.png','../pic/zahl11.png'),
+                                (144,12,7,null,null,null,'+',null,null,19,null,8,'../pic/zahl08.png','../pic/zahl9.png','../pic/zahl06.png','../pic/zahl7.png');
+
+insert into user(name, passwort, aufgabenId, rolle, belohnungsstand) values
+                 ('Lea','Lea',null,'user',null),
+                 ('Markus','Markus',null,'admin',null);
+
+
+
+
+
+
+
