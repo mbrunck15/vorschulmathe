@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #dropzone {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #ccc;
+            text-align: center;
+            margin: 20px;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+
+<div id="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<img src="img/bild1.jpg" id="img1" draggable="true" ondragstart="drag(event)">
+<img src="img/bild2.jpg" id="img2" draggable="true" data-loesung1="2" ondragstart="drag(event)">
+<img src="img/bild3.jpg" id="img3" draggable="true" ondragstart="drag(event)">
+<img src="img/bild4.jpg" id="img4" draggable="true" ondragstart="drag(event)">
+
+<script>
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        var data = event.dataTransfer.getData("text");
+        var draggedImage = document.getElementById(data);
+
+        // Überprüfe hier, welches Bild verschoben wurde
+        if (draggedImage.src.endsWith("bild1.jpg")) {
+            console.log("Bild 1 wurde verschoben");
+        } else if (draggedImage.src.endsWith("bild2.jpg")) {
+            console.log("Bild 2 wurde verschoben");
+            console.log(document.getElementById('img2').getAttribute('data-loesung1'));
+        } else if (draggedImage.src.endsWith("bild3.jpg")) {
+            console.log("Bild 3 wurde verschoben");
+        } else if (draggedImage.src.endsWith("bild4.jpg")) {
+            console.log("Bild 4 wurde verschoben");
+        }
+
+        // Füge das verschobene Bild in die Drop-Zone ein
+        event.target.appendChild(draggedImage);
+    }
+</script>
+
+</body>
+</html>
