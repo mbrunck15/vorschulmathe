@@ -46,7 +46,7 @@
 <div style="display: flex">
 <div><img src="<?php echo $aArr['bild1'];?>" id="bild"></div>
     <div class="ziel botton" id="loesung" style="margin-left: 160px" ondrop="drop(event)" ondragover="allowDrop(event)" data-id="<?php echo $aArr['id'];?>" data-loesung="<?php echo $aArr['loesung1'];?>" ></div>
-    <div class="auswahlzahl botton" style="margin-left: 180px"><img id="drag1" src="<?php echo $aArr['loesungsbild1'];?>" data-wert="<?php echo $l1 ?>" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
+    <div class="auswahlzahl botton" style="margin-left: 100px"><img id="drag1" src="<?php echo $aArr['loesungsbild1'];?>" data-wert="<?php echo $l1 ?>" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
     <div class="auswahlzahl botton"><img id="drag2" src="<?php echo $aArr['loesungsbild2'];?>" data-wert="<?php echo $l2 ?>" draggable="true" ondragstart="drag(event)" width="60px" height="60px" data></div>
     <div class="auswahlzahl botton"><img id="drag3" src="<?php echo $aArr['loesungsbild3'];?>" data-wert="<?php echo $l3 ?>" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>
     <div class="auswahlzahl botton"><img id="drag4" src="<?php echo $aArr['loesungsbild4'];?>" data-wert="<?php echo $l4 ?>" draggable="true" ondragstart="drag(event)" width="60px" height="60px"></div>

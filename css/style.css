@@ -144,7 +144,7 @@ li a:hover:not(.active) {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    margin-top:80px;
+    margin-top:0px;
 }
 .auswahl {
     display: flex;
@@ -201,4 +201,10 @@ li a:hover:not(.active) {
     height:8px;
     height:12px;
     background-color: antiquewhite;
+}
+.bild1{
+
+    width: 60px;
+    height: 60px;
+
 }
