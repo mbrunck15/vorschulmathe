@@ -16,7 +16,7 @@
 
         let loesung = Number(document.getElementById('loesung').getAttribute('data-loesung'));
         let id      = Number(document.getElementById('loesung').getAttribute('data-id'));
-
+        console.log(loesung);
         // Überprüfe hier, welches Bild verschoben wurde
         if (Number(draggedImage.dataset.wert)===loesung) {
 
@@ -42,9 +42,9 @@
 </script>
 <div id="s">
     <div id="schlange">
-        <div class="schlangezahl">"<?php echo $aArr['wert1'];?>"</div>
-        <div class="schlangezahl">"<?php echo $aArr['rechenart'];?>"</div>
-        <div class="schlangezahl">"<?php echo $aArr['wert2'];?>"</div>
+        <div class="schlangezahl"><img src="<?php echo $aArr['wert1']; ?>" class="bild1"></div>
+        <div class="schlangezahl"><img src="<?php echo $aArr['rechenart']; ?>" class="bild1"></div>
+        <div class="schlangezahl"><img src="<?php echo $aArr['wert2']; ?>" class="bild1"></div>
         <div class="schlangezahl">=</div>
         <div id="loesung" class="schlangezahl" data-id="<?php echo $aArr['id'];?>" data-loesung="<?php echo $aArr['loesung1'];?>" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     </div>

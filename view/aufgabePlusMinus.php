@@ -29,8 +29,11 @@ include 'nav.php';
         include 'plusminus.php';
         ?>
     </div>
-    <div id="level">
-        level
+    <div id="level10">
+        <?php
+        include 'level.php'
+        ?>
+
         <form>
             <button id="button1">weiter</button>
             <input id="level" type="hidden"  name="neueslevel" >
